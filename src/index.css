@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.glowing-border-text {
+    position: relative;
+    font-weight: semibold;
+   
+    text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.3), 
+            0 0 10px rgba(255, 255, 255, 0.2), 
+            0 0 10px #420b91, 
+            0 0 10px #3469b9, 
+            0 0 10px #1199ce, 
+            0 0 10px #0fb8c7;
+}
+
+
+.glowing-border-settings-text {
+    position: relative;
+    font-weight: semibold;
+   
+    text-shadow: 
+            0 0 5px rgba(255, 255, 255, 0.3), 
+            0 0 20px rgba(255, 255, 255, 0.2), 
+            0 0 20px #020d82, 
+            0 0 20px #130889, 
+            0 0 20px #2138ce, 
+            0 0 20px #0274b1;
+}
+
+.glowing-static-text {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.4);
+  }
+  
+  .glowing-input {
+    border: 2px solid rgba(0, 255, 255, 0.8);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
+  }
+  
+  .glowing-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  }
+
+  
+
