@@ -43,7 +43,7 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
       }
     }
 
-    // Check diagonals (top-left to bottom-right)
+    // Checking diagonals (top-left to bottom-right)
     for (let row = 0; row <= n - winStreak; row++) {
       for (let col = 0; col <= n - winStreak; col++) {
         const diagonalSlice = [];
@@ -54,7 +54,7 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
       }
     }
 
-    // Check anti-diagonals (top-right to bottom-left)
+    // Checking anti-diagonals (top-right to bottom-left)
     for (let row = 0; row <= n - winStreak; row++) {
       for (let col = winStreak - 1; col < n; col++) {
         const antiDiagonalSlice = [];
@@ -69,7 +69,7 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
   };
 
   const checkDraw = (board) => {
-    return board.flat().every((cell) => cell !== null); // No empty cells left
+    return board.flat().every((cell) => cell !== null); // checking no empty cells left
   };
 
   const handleClick = (row, col) => {
@@ -139,7 +139,7 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
       <div
         className={`grid gap-1 ${gridbackgroundColor}  p-4 rounded-md shadow-lg`}
         style={{
-          gridTemplateColumns: `repeat(${gridSize}, 100px)`, // Fixed size for grid cells
+          gridTemplateColumns: `repeat(${gridSize}, 100px)`, // Fixing size for grid cells
           gridTemplateRows: `repeat(${gridSize}, 100px)`, // Ensuring square cells
         }}
       >

@@ -18,9 +18,9 @@ const ThemeSelection = ({ setTheme, startGame }) => {
   const link = useNavigate();
 
   const handleThemeSelection = (selectedTheme) => {
-    setTheme(selectedTheme);
-    link('/play'); // Set the selected theme
-    startGame(); // Start the game after selecting the theme
+    setTheme(selectedTheme); // Setting the selected theme
+    link('/play'); 
+    startGame(); // Starting the game after selecting the theme
   };
 
   return (

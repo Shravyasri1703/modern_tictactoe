@@ -11,7 +11,7 @@ const Settings = ({ onStartGame }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     link('/theme');
-    onStartGame(size, streak);
+    onStartGame(size, streak); // configuring board size and streak size for new game
   };
 
   return (
