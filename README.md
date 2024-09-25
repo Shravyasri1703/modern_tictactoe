@@ -95,4 +95,7 @@ yarn serve
 ## Screenshots
 
 
-
+![Screenshot 2024-09-25 201638](https://github.com/user-attachments/assets/f81091bc-9bf0-435d-aa69-f978d27d07bd)
+![Screenshot 2024-09-25 201646](https://github.com/user-attachments/assets/25707239-8053-467b-8297-634c60a6f9f9)
+![Screenshot 2024-09-25 201658](https://github.com/user-attachments/assets/8faaacc7-0950-4fa2-ab78-df8ee947a341)
+![Screenshot 2024-09-25 201723](https://github.com/user-attachments/assets/7d11dd2a-c647-4903-ba3c-dc61f605fdb0)
