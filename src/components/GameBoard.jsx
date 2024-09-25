@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import Cell from './Cell';
 import wooden from '../assets/wooden.jpg'
 import avng from '../assets/avngbg.jpg'
@@ -8,14 +8,15 @@ import bmcbg from '../assets/batman_cartoon.jpg'
 import woodgrid from '../assets/woodgrid.jpg'
 import batmanicon from '../assets/batmanicon.png'
 import jokericon from '../assets/batmanicon.png'
+import { useNavigate } from 'react-router-dom';
 
 
 const GameBoard = ({ gridSize, winStreak, theme }) => {
   const [board, setBoard] = useState(Array(gridSize).fill().map(() => Array(gridSize).fill(null)));
   const [currentPlayer, setCurrentPlayer] = useState('X');
   const [winner, setWinner] = useState(null);
-  const [isDraw, setIsDraw] = useState(false); // New state for draw detection
-
+  const [isDraw, setIsDraw] = useState(false); 
+  const link = useNavigate()
   const checkWin = (board, winStreak) => {
     const n = board.length;
 
@@ -23,7 +24,7 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
       return line.every((cell) => cell !== null && cell === line[0]);
     };
 
-    // Check rows
+    // Checking the rows
     for (let row = 0; row < n; row++) {
       for (let col = 0; col <= n - winStreak; col++) {
         const rowSlice = board[row].slice(col, col + winStreak);
@@ -31,7 +32,7 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
       }
     }
 
-    // Check columns
+    // Checking the columns
     for (let col = 0; col < n; col++) {
       for (let row = 0; row <= n - winStreak; row++) {
         const colSlice = [];
@@ -72,7 +73,7 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
   };
 
   const handleClick = (row, col) => {
-    if (board[row][col] || winner || isDraw) return; // Prevent further clicks if game is over
+    if (board[row][col] || winner || isDraw) return; // Function to Prevent further clicks if game is over
 
     const newBoard = board.map((r, i) =>
       r.map((cell, j) => (i === row && j === col ? currentPlayer : cell))
@@ -83,11 +84,15 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
     if (gameWinner) {
       setWinner(gameWinner);
     } else if (checkDraw(newBoard)) {
-      setIsDraw(true); // If no empty cells left and no winner, it's a draw
+      setIsDraw(true);                // If no empty cells left and no winner, it's a draw
     } else {
       setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
     }
   };
+
+  const handleChangeTheme = () =>{
+     link('/theme')
+  }
 
   const backgroundStyle = 
   theme === 'classic'
@@ -157,12 +162,15 @@ const GameBoard = ({ gridSize, winStreak, theme }) => {
 
       {/* Restart button */}
       {(winner || isDraw) && (
+        <div className='gap-5'>
         <button
-          className={`mt-4 px-4 py-2 ${backgroundColor} font-bold border-spacing-2 border-yellow-300 rounded-lg`}
+          className={`mt-4 mr-5 px-4 py-2 ${backgroundColor} font-bold border-spacing-2 border-yellow-300 rounded-lg`}
           onClick={restartGame}
         >
           Restart Game
         </button>
+        <button className={`mt-4 px-4 py-2 ${backgroundColor} font-bold border-spacing-2 border-yellow-300 rounded-lg`} onClick={handleChangeTheme}>Change Theme</button>
+        </div>
       )}
     </div>
 
